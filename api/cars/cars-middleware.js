@@ -6,7 +6,7 @@ const checkCarId = (req, res, next) => {
   const { id } = req.params
   getById(id).then(car => {
     if (car) {
-      res.car = car
+      req.car = car
       next()
     }
     next({ status: 404, message: `car with id ${id} is not found` })
