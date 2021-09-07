@@ -39,3 +39,5 @@ const checkVinNumberUnique = (req, res, next) => {
     next()
   })
 }
+
+module.exports = { checkCarId, checkCarPayload, checkVinNumberUnique, checkVinNumberValid }
