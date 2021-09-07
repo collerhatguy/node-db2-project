@@ -19,4 +19,10 @@ const create = (car) => {
     .then(([id]) => getById(id))
 }
 
-module.exports = { getAll, getById, create }
+const checkVin = (vin) => {
+  return getAll()
+    .where({ vin })
+    .then(cars => cars.length)
+}
+
+module.exports = { getAll, getById, create, checkVin }
