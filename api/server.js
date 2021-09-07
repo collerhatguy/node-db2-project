@@ -12,6 +12,4 @@ server.use((err, req, res, next) => {
     })
 })
 
-// DO YOUR MAGIC
-
 module.exports = server
