@@ -14,6 +14,11 @@ const checkCarId = (req, res, next) => {
 
 const checkCarPayload = (req, res, next) => {
   // DO YOUR MAGIC
+  const requiredKey = ["id", "vin", "make", "model", "mileage"]
+  requiredKey.forEach(key => {
+    if (!req.body[key]) next({ status: 400, message: `${key} is missing` })
+  })
+  next()
 }
 
 const checkVinNumberValid = (req, res, next) => {
